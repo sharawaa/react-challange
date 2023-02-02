@@ -1,23 +1,16 @@
-import "./App.css";
+import "./styles/App.css";
+import Pagination from "./components/Pagination";
 import { Route, Routes } from "react-router-dom";
 
-import Home from "./pages/Home";
-import Header from "./components/Header";
-import Login from "./pages/Login";
-import Footer from "./components/Footer"
-
+import Page from "./components/Page";
 
 function App() {
   return (
-    <div>
-      <Header />
+    <div className="container appContainer">
       <Routes>
-        <Route exact path="/" element={<Home />} />
-        
-       
-        <Route path="/login" element={<Login />} />
+        <Route path="/page/:id" element={<Page />} />
       </Routes>
-      <Footer />
+      <Pagination />
     </div>
   );
 }

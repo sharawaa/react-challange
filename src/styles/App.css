@@ -51,3 +51,9 @@ body {
   text-align: start;
   left: 0;
 }
+.appContainer {
+  height: 50vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
