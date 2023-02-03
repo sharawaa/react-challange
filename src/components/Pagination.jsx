@@ -1,9 +1,9 @@
 import { useState } from "react";
-import { Link, NavLink } from "react-router-dom";
+import { Link } from "react-router-dom";
 import "../styles/pagination.css";
-import Page from "./Page";
-import PageBtn from "./subComponent/PageBtn";
 
+import PageBtn from "./subComponent/PageBtn";
+const pageNumber = 200;
 export default function Pagination() {
   const [currentPage, setCurrentPage] = useState(100);
   return (
@@ -13,8 +13,8 @@ export default function Pagination() {
       </Link>
 
       <Link
-        to={`/page/${currentPage - 3}`}
-        onClick={() => setCurrentPage(currentPage - 3)}
+        to={`/page/${currentPage - 1}`}
+        onClick={() => setCurrentPage(currentPage - 1)}
       >
         <PageBtn btnName={"Өмнөх"} btnClass={"inActive"} />
       </Link>
@@ -47,6 +47,16 @@ export default function Pagination() {
         onClick={() => setCurrentPage(currentPage + 2)}
       >
         <PageBtn btnName={currentPage + 2} btnClass={"inActive"} />
+      </Link>
+      <Link
+        to={`/page/${currentPage + 1}`}
+        onClick={() => setCurrentPage(currentPage +1)}
+      >
+        <PageBtn btnName={"Дараах"} btnClass={"inActive"} />
+      </Link>
+      <Link to={`/page/${pageNumber}`}
+      onClick={()=>setCurrentPage(pageNumber)}>
+        <PageBtn btnClass={"inActive"} btnName={pageNumber} />
       </Link>
     </div>
   );

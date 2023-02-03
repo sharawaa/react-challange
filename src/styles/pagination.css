@@ -2,11 +2,13 @@
   border: none;
   border-bottom: 2px solid red;
   width: 50px;
+  height: 53px;
   color: red;
 }
 .inActive {
   border: none;
   width: 50px;
+
   background-color: white;
   color: #666;
 }
